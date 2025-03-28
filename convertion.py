@@ -42,7 +42,7 @@ def gal_to_pound(qty):
 def gal_to_kg(qty):
     return (qty * 12.76 ) / 2.20462
 def gal_to_dst(qty):
-    return qty * *(12.76/2000)
+    return qty * (12.76/2000)
 def gal_to_lmt(qty):
     return (qty * 12.76 ) / 2204.62
 def gal_to_gal(qty):
