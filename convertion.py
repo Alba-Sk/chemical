@@ -102,7 +102,7 @@ def convert_units(qty, from_unit, to_unit):
         return None  # Conversion not defined
 
 # Streamlit Interface
-st.title("Chemical Quantity Conversion App")
+st.title("Chemical Caustic soda Conversion App")
 st.write("This app converts quantities of chemicals from one unit to another.")
 
 # Input fields
