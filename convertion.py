@@ -40,7 +40,7 @@ def gal_to_liter(qty):
     return qty * 3.785411784
 
 # Streamlit Interface
-st.title("Chemical Quantity Conversion App")
+st.title("Chemical Caustic Soda Quantity Conversion App")
 st.write("This app converts quantities of chemicals from one unit to another.")
 
 # Input fields
@@ -72,7 +72,7 @@ if qty > 0:
             converted_qty = None
 
     if converted_qty is not None:
-        st.write(f"{qty} {from_unit} is equal to {converted_qty:.3f} {to_unit}.")
+        st.write(f"{qty} {from_unit} is equal to {converted_qty:.5f} {to_unit}.")
     else:
         st.write("Conversion not defined for the selected units.")
 else:
