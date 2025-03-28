@@ -164,25 +164,5 @@ def convert_units(qty, from_unit, to_unit):
         return None  # Invalid conversion
 
 
-# Streamlit Interface
-st.title("Chemical Quantity Conversion App")
-st.write("This app converts quantities of chemicals from one unit to another.")
-
-# Input fields
-qty = st.number_input("Enter Quantity:", min_value=0.0, step=0.1)
-from_unit = st.selectbox("Select the unit to convert from:", ['Liter', 'Gal', 'DST', 'Kg', 'Pound', 'LMT'])
-to_unit = st.selectbox("Select the unit to convert to:", ['Liter', 'Gal', 'DST', 'Kg', 'Pound', 'LMT'])
-
-# Conversion logic
-if qty > 0:
-    converted_qty = convert_units(qty, from_unit, to_unit)
-
-    if converted_qty is not None:
-        st.write(f"{qty} {from_unit} is equal to {converted_qty:.3f} {to_unit}.")
-    else:
-        st.write("Conversion not defined for the selected units.")
-else:
-    st.write("Please enter a valid quantity.")
-
 
 
