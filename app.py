@@ -34,7 +34,7 @@ if price_per_unit > 0:
     if converted_price is not None:
         # Ensure proper formatting of the conversion output with spacing between value and unit
         # Fixing the string formatting for the output to prevent the issue
-        st.write(f"${price_per_unit:.2f} {from_unit_price} per unit is equal to {converted_price}")
+        st.write(f"${price_per_unit:.2f} {from_unit_price} per unit is equal to ${converted_price} {from_to_price}")
     else:
         st.write("Price conversion not defined for the selected units.")
 else:
