@@ -20,7 +20,8 @@ def liter_to_lmt(price):    # Liter to LMT conversion
     return (((1*price))/(((1/3.78541)*12.76)/2204.62))*2
 def liter_to_liter(price):    # Liter to Liter conversion (no change, just return the same quantity)
     return price
- # Gallons conversion
+ 
+# Gallons conversion
 def gal_to_liter(price):   
     return price * 3.785411784
 def gal_to_pound(price):
