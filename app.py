@@ -32,9 +32,10 @@ to_unit_price = st.selectbox("Select the unit to convert to:", ["Pound", "Gal", 
 if price_per_unit > 0:
     converted_price = convert_price(price_per_unit, from_unit_price, to_unit_price)
     if converted_price is not None:
-        # Ensure proper formatting of the conversion output with spacing between value and unit
-        # Fixing the string formatting for the output to prevent the issue
-        st.write(f"${price_per_unit:.2f} {from_unit_price} per unit is equal to ${converted_price} {from_to_price}")
+        # Ensure proper formatting of the conversion output
+        # Ensure both values are correctly formatted and units are capitalized
+        converted_price_value = float(converted_price.split()[0])  # Extracting the numeric value
+        st.write(f"${price_per_unit:.2f} {from_unit_price} per unit is equal to ${converted_price_value:.5f} {to_unit_price.capitalize()} per unit.")
     else:
         st.write("Price conversion not defined for the selected units.")
 else:
