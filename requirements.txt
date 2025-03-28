@@ -1,14 +1,9 @@
-
-matplotlib==3.10.1
-matplotlib-inline==0.1.7
-
-numpy>=1.24.3
-
-pandas==2.2.3
-
-seaborn==0.13.2
-
-streamlit==1.44.0
+matplotlib
+matplotlib-inline
+numpy
+pandas
+seaborn
+streamlit
 
 
 
