@@ -35,7 +35,7 @@ to_unit_price = st.selectbox("Select the unit to convert to:", ["Pound", "Gal", 
 if price_per_unit > 0:
     converted_price = convert_price(price_per_unit, from_unit_price, to_unit_price)
     if converted_price is not None:
-        # Display with $ sign and format the price to 2 decimal places
+        # Properly formatted output with spaces between price and unit
         st.write(f"${price_per_unit:.2f} {from_unit_price} per unit is equal to ${converted_price:.4f} {to_unit_price} per unit.")
     else:
         st.write("Price conversion not defined for the selected units.")
