@@ -103,7 +103,7 @@ def pound_to_gal(price):
 
 
 # Conversion function that uses the above-defined functions
-ef convert_price(price, from_unit, to_unit):
+def convert_price(price, from_unit, to_unit):
     # Define a dictionary to map the units to their respective conversion functions
     conversion_map = {
         ('Liter', 'Pound'): liter_to_pound,
