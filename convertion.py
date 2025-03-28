@@ -16,7 +16,11 @@
 # In[2]:
 
 
+#!/usr/bin/env python
+# coding: utf-8
+
 import pandas as pd
+import streamlit as st
 
 # Define densities for different substances (example values)
 density_dict = {
@@ -37,19 +41,25 @@ def kg_to_liter(kg, substance):
     else:
         return None  # Density not found
 
+# Streamlit Interface
+st.title("Chemical Caustic Soda Conversion App")
+st.write("This app converts pounds of a substance into liters based on its density.")
 
-# Step 3: Test the Conversion Logic in Jupyter
+# User Input
+substance = st.selectbox("Select a substance:", list(density_dict.keys()))
+pounds = st.number_input("Enter weight in pounds:", min_value=0.0, step=0.1)
 
-# In[3]:
-
-
-pounds = 1
-substance = "Water"
-
-kg = pound_to_kg(pounds)
-liters = kg_to_liter(kg, substance)
-
-print(f"{pounds} pound(s) of {substance} = {liters:.3f} liters")
+# Conversion Logic
+if pounds > 0:
+    kg = pound_to_kg(pounds)
+    liters = kg_to_liter(kg, substance)
+    
+    if liters is not None:
+        st.write(f"{pounds} pound(s) of {substance} is equal to {liters:.3f} liters.")
+    else:
+        st.write(f"Density for {substance} not found.")
+else:
+    st.write("Please enter a valid weight.")
 
 
 # Step 4: Build a Simple UI with Streamlit
