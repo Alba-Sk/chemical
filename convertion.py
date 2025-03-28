@@ -63,10 +63,10 @@ print(f"{pounds} pound(s) of {substance} = {liters:.3f} liters")
 # In[ ]:
 
 
-import os
+# import os
 
 # Set the working directory to your project folder
-os.chdir(r"C:\Users\Albana\OneDrive\Desktop\dc\DS\chemical")
+# os.chdir(r"C:\Users\Albana\OneDrive\Desktop\dc\DS\chemical")
 
 
 # In[ ]:
@@ -74,11 +74,11 @@ os.chdir(r"C:\Users\Albana\OneDrive\Desktop\dc\DS\chemical")
 
 # on the terminal run:
 # Initialize Git:
-git init
-git add .
+# git init
+# git add .
 # Connect GitHub Repo
-git commit -m "Initial commit - Streamlit Unit Converter"
-git remote add origin https://github.com/alba-sk/chemical.git
-git push -u origin main
+# git commit -m "Initial commit - Streamlit Unit Converter"
+# git remote add origin https://github.com/alba-sk/chemical.git
+# git push -u origin main
 
 
