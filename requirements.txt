@@ -1,7 +1,7 @@
-streamlit==1.44.0
+sstreamlit==1.44.0
 pandas>=2.2.3
 numpy>=2.2.4
 matplotlib
 seaborn
-# Add any other necessary libraries below
+# # Add any other necessary libraries below
 
