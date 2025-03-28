@@ -31,7 +31,7 @@ def gal_to_kg(price):
 def gal_to_dst(price):
     return (1*price)/(1*(12.76/2000)))*2
 def gal_to_lmt(price):
-    return ((1*price)/(1*(12.76/2204.62)))*2
+    return ((1*price)/(1*(12.76/2204.62)))*2)
 def gal_to_gal(price):
     return price
 
