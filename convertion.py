@@ -78,7 +78,7 @@ def kg_to_gal(qty):
 
  # Pound conversion
 def pound_to_liter(qty):   
-    return ((qty */12.76)*3.785411784)
+    return ((qty /12.76)*3.785411784)
 def pound_to_pound(qty):
     return qty
 def pound_to_kg(qty):
@@ -92,7 +92,7 @@ def pound_to_gal(qty):
 
  # Pound conversion
 def lmt_to_liter(qty):   
-    return ((qty **2204.62)/12.76)*3.785411784
+    return ((qty *2204.62)/12.76)*3.785411784
 def lmt_to_pound(qty):
     return qty * 2204.62    
 def lmt_to_kg(qty):
@@ -102,7 +102,7 @@ def lmt_to_dst(qty):
 def lmy_to_lmt(qty):
     return qty 
 def lmt_to_gal(qty):
-    return (qty * *2204.62)/12.76
+    return (qty * 2204.62)/12.76
 
 
 
