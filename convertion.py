@@ -23,44 +23,48 @@ import pandas as pd
 import streamlit as st
 
 # Define densities for different substances (example values)
-density_dict = {
-    "Water": 1.0,      # 1 kg/L
-    "Ethanol": 0.789,  # kg/L
-    "Oil": 0.92,       # kg/L
-    "Mercury": 13.6    # kg/L
+conversion_factors = {
+    'Liter_to_Pound': ((1/3.785411784)*12.76),    # DST to Kg (assuming DST is equivalent to Liters for now)
+    'Liter_to_Gal':1/3.785411784,  # Pounds to Kilograms
+    'Liter_to_Kg': ((1/3.78541)*12.76)/2.2046,  # Gallons to Liters
+    'Liter_to_DST': ((1/3.78541)*12.76)/2000,  # Assume 1 Kg is equivalent to 1 Liter for simplicity, adjust based on substance
+    'Liter_to_LMT': (((1/3.78541)*12.76))/2204.62,  # Pounds to Liters based on density of water (adjust for other chemicals)
+    'Liter_to_Liter': 1*1,    # LMT to Kg (for example purposes, adjust as per the substance)
+    'Gal_to_Liter':1*3.785411784
+    
+    
 }
-
 # Conversion functions
-def pound_to_kg(pounds):
-    return pounds * 0.453592
+def convert_units(qty, from_unit, to_unit):
+    """Convert quantity from one unit to another using conversion factors."""
+    if from_unit == to_unit:
+        return qty  # No conversion needed if the units are the same
 
-def kg_to_liter(kg, substance):
-    """Convert kg to liter using substance density"""
-    if substance in density_dict:
-        return kg / density_dict[substance]
+    conversion_key = f"{from_unit}_to_{to_unit}"
+    if conversion_key in conversion_factors:
+        return qty * conversion_factors[conversion_key]
     else:
-        return None  # Density not found
+        return None  # Conversion not defined
 
 # Streamlit Interface
-st.title("Chemical Caustic Soda Conversion App")
-st.write("This app converts pounds of a substance into liters based on its density.")
+st.title("Chemical Quantity Conversion App")
+st.write("This app converts quantities of chemicals from one unit to another.")
 
-# User Input
-substance = st.selectbox("Select a substance:", list(density_dict.keys()))
-pounds = st.number_input("Enter weight in pounds:", min_value=0.0, step=0.1)
+# Input fields
+qty = st.number_input("Enter Quantity:", min_value=0.0, step=0.1)
+from_unit = st.selectbox("Select the unit to convert from:", ['DST', 'Liter', 'Kg', 'Gal', 'Pound', 'LMT'])
+to_unit = st.selectbox("Select the unit to convert to:", ['DST', 'Liter', 'Kg', 'Gal', 'Pound', 'LMT'])
 
-# Conversion Logic
-if pounds > 0:
-    kg = pound_to_kg(pounds)
-    liters = kg_to_liter(kg, substance)
+# Conversion logic
+if qty > 0:
+    converted_qty = convert_units(qty, from_unit, to_unit)
     
-    if liters is not None:
-        st.write(f"{pounds} pound(s) of {substance} is equal to {liters:.3f} liters.")
+    if converted_qty is not None:
+        st.write(f"{qty} {from_unit} is equal to {converted_qty:.3f} {to_unit}.")
     else:
-        st.write(f"Density for {substance} not found.")
+        st.write("Conversion not defined for the selected units.")
 else:
-    st.write("Please enter a valid weight.")
-
+    st.write("Please enter a valid quantity.")
 
 # Step 4: Build a Simple UI with Streamlit
 # Now that we have the logic, we’ll create a Streamlit UI with dropdowns and input fields.
