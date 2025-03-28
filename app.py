@@ -29,14 +29,14 @@ st.header("Price Conversion $/UOM")
 
 price_per_unit = st.number_input("Enter price per unit:", min_value=0.0, format="%.4f")
 
-# Input for units
 from_unit_price = st.selectbox("Select the unit of the price you're entering:", ["Pound", "Gal", "Kg", "DST", "LMT", "Liter"])
 to_unit_price = st.selectbox("Select the unit to convert to:", ["Pound", "Gal", "Kg", "DST", "LMT", "Liter"])
 
 if price_per_unit > 0:
     converted_price = convert_price(price_per_unit, from_unit_price, to_unit_price)
     if converted_price is not None:
-        st.write(f"{price_per_unit:.4f} {from_unit_price} per unit is equal to {converted_price:.4f} {to_unit_price} per unit.")
+        # Display with $ sign and format the price to 2 decimal places
+        st.write(f"${price_per_unit:.2f} {from_unit_price} per unit is equal to ${converted_price:.4f} {to_unit_price} per unit.")
     else:
         st.write("Price conversion not defined for the selected units.")
 else:
