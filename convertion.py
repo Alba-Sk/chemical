@@ -99,7 +99,7 @@ def lmt_to_kg(qty):
     return qty *(2204.62/2.20462)
 def lmt_to_dst(qty):
     return (qty *2204.62)/2000
-def lmy_to_lmt(qty):
+def lmt_to_lmt(qty):
     return qty 
 def lmt_to_gal(qty):
     return (qty * 2204.62)/12.76
