@@ -1,6 +1,6 @@
 # app.py
 import streamlit as st
-from conversion import convert_units  # Import unit conversion function
+from convertion import convert_units  # Import unit conversion function
 from price import convert_price      # Import price conversion function
 
 # Streamlit Interface
