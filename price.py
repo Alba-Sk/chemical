@@ -103,7 +103,7 @@ def pound_to_gal(price):
 
 
 # Conversion function that uses the above-defined functions
-def convert_price(price, from_unit, to_unit):
+ef convert_price(price, from_unit, to_unit):
     # Define a dictionary to map the units to their respective conversion functions
     conversion_map = {
         ('Liter', 'Pound'): liter_to_pound,
@@ -152,9 +152,12 @@ def convert_price(price, from_unit, to_unit):
     # Get the conversion function based on the provided units
     conversion_func = conversion_map.get((from_unit, to_unit))
 
-    # If conversion function exists, apply it and format output with dollar sign
+    # Check if the conversion function exists
     if conversion_func:
-        converted_price = conversion_func(price)
-        return f"${price:.2f} {from_unit} per unit is equal to ${converted_price:.4f} {to_unit} per unit"
+        try:
+            converted_price = conversion_func(price)
+            return f"${price:.2f} {from_unit} per unit is equal to ${converted_price:.4f} {to_unit} per unit."
+        except Exception as e:
+            return f"Error during conversion: {e}"
     else:
-        return "Invalid conversion"
+        return f"Invalid conversion: No conversion available from {from_unit} to {to_unit}."
