@@ -21,12 +21,14 @@ if qty > 0:
         st.write("Conversion not defined for the selected units.")
 else:
     st.write("Please enter a valid quantity.")
-
+    
+--------------
 # Price Conversion Section
-st.header("Price Conversion")
+st.header("Price Conversion $/UOM")
 price_per_unit = st.number_input("Enter Price per Unit:", min_value=0.0, step=0.1)
-from_unit_price = st.selectbox("Select the price unit to convert from:", ['USD', 'EUR', 'GBP'])
-to_unit_price = st.selectbox("Select the price unit to convert to:", ['USD', 'EUR', 'GBP'])
+from_unit_price = st.selectbox("Select the price unit to convert from:", ['Liter', 'Gal', 'DST', 'Kg', 'Pound', 'LMT'])
+to_unit_price = st.selectbox("Select the price unit to convert to:", ['Liter', 'Gal', 'DST', 'Kg', 'Pound', 'LMT''])
+
 
 if price_per_unit > 0:
     converted_price = convert_price(price_per_unit, from_unit_price, to_unit_price)
