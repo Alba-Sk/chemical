@@ -3,4 +3,5 @@ pandas>=2.2.3
 numpy>=2.2.4
 matplotlib
 seaborn
-other-libraries-you-need  # Remove or replace with actual dependencies
+# Add any other necessary libraries below
+
