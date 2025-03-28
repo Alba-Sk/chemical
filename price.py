@@ -70,9 +70,9 @@ def pound_to_pound(price):
 def pound_to_kg(price):
     return (1 * price) / (1/2.20462)
 def pound_to_dst(price):
-    return ((1 * price) / 2000) * 2
+    return ((1 * price) / (1/2000) * 2
 def pound_to_lmt(price):
-    return ((1 * price) / 2204.62) * 2
+    return ((1 * price) / (1/2204.62) * 2
 def pound_to_gal(price):
     return (1 * price) / (1/12.76)
 
