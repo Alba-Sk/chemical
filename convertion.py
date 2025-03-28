@@ -178,7 +178,7 @@ if qty > 0:
     converted_qty = convert_units(qty, from_unit, to_unit)
 
     if converted_qty is not None:
-        st.write(f"{qty} {from_unit} is equal to {converted_qty:.3f} {to_unit}.")
+        st.write(f"{qty} {from_unit} is equal to {converted_qty:.5f} {to_unit}.")
     else:
         st.write("Conversion not defined for the selected units.")
 else:
