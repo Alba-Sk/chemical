@@ -92,7 +92,7 @@ def pound_to_gal(qty):
 
  # Pound conversion
 def lmt_to_liter(qty):   
-    return (qty **2204.62)/12.76)*3.785411784
+    return ((qty **2204.62)/12.76)*3.785411784
 def lmt_to_pound(qty):
     return qty * 2204.62    
 def lmt_to_kg(qty):
