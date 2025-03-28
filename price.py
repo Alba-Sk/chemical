@@ -9,70 +9,95 @@
 # Define conversion functions for different units
 def liter_to_pound(price):
     return (1 * price) / (((1 / 3.78541) * 12.76))
+
 def liter_to_gal(price):  # Liter to Gallons conversion
     return (1 * price) / (1 / 3.785411784)
+
 def liter_to_kg(price):    
     return (1 * price) / (((1 / 3.78541) * 12.76) / 2.2046)
+
 def liter_to_dst(price):  # Liter to DST conversion
     return (((1 * price)) / (((1 / 3.78541) * 12.76) / 2000)) * 2  
+
 def liter_to_lmt(price):  # Liter to LMT conversion
     return (((1 * price)) / (((1 / 3.78541) * 12.76) / 2204.62)) * 2
+
 def liter_to_liter(price):  # Liter to Liter conversion (no change, just return the same quantity)
     return price
 
 # Gallons conversion
 def gal_to_liter(price):   
     return (1 * price) / (1 * 3.785411784)
+
 def gal_to_pound(price):
     return (1 * price) / (1 * 12.76)
+
 def gal_to_kg(price):
     return (1 * price) / ((1 * 12.76) / 2.20462)
+
 def gal_to_dst(price):
     return (1 * price) / (1 * (12.76 / 2000)) * 2
+
 def gal_to_lmt(price):
     return ((1 * price) / (1 * (12.76 / 2204.62))) * 2
+
 def gal_to_gal(price):
     return price
 
 # DST conversion
 def dst_to_liter(price):   
     return (1 * price) / (((1 * 2000) / 12.76) * 3.785411784) * 0.5
+
 def dst_to_pound(price):
     return (1 * price) / (1 * 2000) * 0.5
+
 def dst_to_kg(price):
     return (1 * price) / (1 * (2000 / 2.20462)) * 0.5   
+
 def dst_to_dst(price):
     return price
+
 def dst_to_lmt(price):
     return (1 * price) / ((1 * 2000) / 2204.62)
+
 def dst_to_gal(price):
     return (1 * price) / (1 * (2000 / 12.76)) * 0.5
 
 # Kg conversion- need to check
 def kg_to_liter(price):   
     return 0
+
 def kg_to_pound(price):
     return 0
+
 def kg_to_kg(price):
     return price
+
 def kg_to_dst(price):
     return 0
+
 def kg_to_lmt(price):
     return 0
+
 def kg_to_gal(price):
     return 0
 
 # Pound conversion
 def pound_to_liter(price):   
     return (1 * price) / ((1 / 12.76) * 3.785411784)
+
 def pound_to_pound(price):
     return price
+
 def pound_to_kg(price):
     return (1 * price) / (1 / 2.20462)
+
 def pound_to_dst(price):
-    return ((1 * price) / (1 / 2000) * 2
+    return ((1 * price) / (1 / 2000)) * 2  # Fixed missing parenthesis
+
 def pound_to_lmt(price):
-    return ((1 * price) / (1 / 2204.62) * 2
+    return ((1 * price) / (1 / 2204.62)) * 2  # Fixed missing parenthesis
+
 def pound_to_gal(price):
     return (1 * price) / (1 / 12.76)
 
