@@ -4,6 +4,9 @@ numpy
 pandas
 seaborn
 streamlit
-
+markdown-it-py
+mdurl
+pygments
+rich
 
 
