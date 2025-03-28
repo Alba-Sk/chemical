@@ -141,7 +141,7 @@ def convert_price(price, from_unit, to_unit):
         ('Pound', 'LMT'): pound_to_lmt,
         ('Pound', 'Gal'): pound_to_gal,
 
-        ('LMT', 'Liter'): kg_to_liter,  # You need to define these LMT conversions if they're used
+        ('LMT', 'Liter'): kg_to_liter,
         ('LMT', 'Pound'): kg_to_pound,
         ('LMT', 'Kg'): kg_to_kg,
         ('LMT', 'DST'): kg_to_dst,
@@ -152,8 +152,9 @@ def convert_price(price, from_unit, to_unit):
     # Get the conversion function based on the provided units
     conversion_func = conversion_map.get((from_unit, to_unit))
 
-    # If conversion function exists, apply it
+    # If conversion function exists, apply it and format output with dollar sign
     if conversion_func:
-        return conversion_func(price)
+        converted_price = conversion_func(price)
+        return f"${price:.2f} {from_unit} per unit is equal to ${converted_price:.4f} {to_unit} per unit"
     else:
-        return None  # Invalid conversion
+        return "Invalid conversion"
