@@ -25,7 +25,7 @@ def liter_to_liter(price):    # Liter to Liter conversion (no change, just retur
 def gal_to_liter(price):   
     return (1*price)/(1*3.785411784)
 def gal_to_pound(price):
-    return =(1*price)/(1*12.76)
+    return (1*price)/(1*12.76)
 def gal_to_kg(price):
     return (1*price)/((1*12.76)/2.20462)
 def gal_to_dst(price):
@@ -37,60 +37,33 @@ def gal_to_gal(price):
 
 # DST conversion
 def dst_to_liter(price):   
-    return ((price * 2000)/12.76)*3.785411784
+    return (1*price)/(((1*2000)/12.76)*3.785411784)*0.5
 def dst_to_pound(price):
-    return price * 2000
+    return (1*price)/(1*2000)*0.5
 def dst_to_kg(price):
-    return price * (2000/2.20462)
+    return (1*price)/(1*(2000/2.20462))*0.5    
 def dst_to_dst(price):
     return price
 def dst_to_lmt(price):
-    return (price * 2000)/2204.62
+    return (1*price)/((1*2000)/2204.62)
 def dst_to_gal(price):
-    return price *(2000/12.76)
-
- # DST conversion
-def kg_to_liter(price):   
-    return price *(2.20462/12.76)*3.785411784
-def kg_to_pound(price):
-    return price *2.20462
-def kg_to_kg(price):
-    return price
-def kg_to_dst(price):
-    return (price *2.20462)/2000
-def kg_to_lmt(price):
-    return (price * 2.20462)/2204.62
-def kg_to_gal(price):
-    return (price *2.20462)/12.76
+    return (1*price)/(1*(2000/12.76))*0.5
 
 
  # Pound conversion
 def pound_to_liter(price):   
-    return ((price /12.76)*3.785411784)
+    return (1*price)/((1/12.76)*3.785411784)
 def pound_to_pound(price):
     return price
 def pound_to_kg(price):
-    return price /2.20462    
+    return (1*price)/(1/2.20462)    
 def pound_to_dst(price):
-    return price /2000
+    return ((1*price)/(1/2000))*2
 def pound_to_lmt(qty):
-    return price /2204.62
+    return ((1*price)/(1/2204.62))*2
 def pound_to_gal(price):
-    return price / 12.76
+    return (1*price)/(1/12.76)
 
- # Pound conversion
-def lmt_to_liter(price):   
-    return ((price *2204.62)/12.76)*3.785411784
-def lmt_to_pound(price):
-    return price * 2204.62    
-def lmt_to_kg(price):
-    return price *(2204.62/2.20462)
-def lmt_to_dst(price):
-    return (price *2204.62)/2000
-def lmt_to_lmt(price):
-    return price 
-def lmt_to_gal(price):
-    return (price * 2204.62)/12.76
 
 # Conversion function that uses the above-defined functions
 def convert_price(price, from_unit, to_unit):
