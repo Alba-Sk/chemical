@@ -9,14 +9,13 @@
 
 # Define conversion functions for different units
 def liter_to_pound(price):
-    return (1*price)/(((1/3.78541)*12.76))
-    
+    return (1*price)/(((1/3.78541)*12.76))    
 def liter_to_gal(price):    # Liter to Gallons conversion
-    return price / 3.785411784
+    return (1*price)/(1/3.785411784)
 def liter_to_kg(price):    
-    return (1*price) / (((price / 3.78541) * 12.76) / 2.2046)
+    return (1*price)/(((1/3.78541)*12.76)/2.2046)    
 def liter_to_dst(price):    # Liter to DST conversion
-    return (((1*price))/(((14/3.78541)*12.76)/2000))*2  
+    return (((1*price))/(((1/3.78541)*12.76)/2000))*2  
 def liter_to_lmt(price):    # Liter to LMT conversion
     return (((1*price))/(((1/3.78541)*12.76)/2204.62))*2
 def liter_to_liter(price):    # Liter to Liter conversion (no change, just return the same quantity)
