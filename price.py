@@ -23,18 +23,19 @@ def liter_to_liter(price):    # Liter to Liter conversion (no change, just retur
  
 # Gallons conversion
 def gal_to_liter(price):   
-    return price * 3.785411784
+    return (1*price)/(1*3.785411784)
 def gal_to_pound(price):
-    return price * 12.76
+    return =(1*price)/(1*12.76)
 def gal_to_kg(price):
-    return (price * 12.76 ) / 2.20462
+    return (1*price)/((1*12.76)/2.20462)
 def gal_to_dst(price):
-    return price * (12.76/2000)
+    return (1*price)/(1*(12.76/2000)))*2
 def gal_to_lmt(price):
-    return (price * 12.76 ) / 2204.62
+    return ((1*price)/(1*(12.76/2204.62)))*2
 def gal_to_gal(price):
     return price
- # DST conversion
+
+# DST conversion
 def dst_to_liter(price):   
     return ((price * 2000)/12.76)*3.785411784
 def dst_to_pound(price):
