@@ -26,7 +26,7 @@ else:
 # Price Conversion Section
 st.header("Price Conversion $/UOM")
 
-price_per_unit = st.number_input("Enter price per unit:", min_value=0.0)
+price_per_unit = st.number_input("Enter price per unit:", min_value=0.0000)
 
 # Input for units
 from_unit_price = st.selectbox("Select the unit of the price you're entering:", ["Pound", "Gal", "Kg", "DST", "LMT", "Liter"])
