@@ -32,12 +32,13 @@ price_per_unit = st.number_input("Enter price per unit:", min_value=0.0)
 from_unit_price = st.selectbox("Select the unit of the price you're entering:", ["Pound", "Gal", "Kg", "DST", "LMT", "Liter"])
 to_unit_price = st.selectbox("Select the unit to convert to:", ["Pound", "Gal", "Kg", "DST", "LMT", "Liter"])
 
-# Check if price is greater than 0 and perform conversion
-if price_per_unit > 0:
+
+# Common mistake: unmatched parenthesis or bracket
+if price_per_unit > 0:  # This should be matched properly
     converted_price = convert_price(price_per_unit, from_unit_price, to_unit_price)
     if converted_price is not None:
         st.write(f"{price_per_unit} {from_unit_price} per unit is equal to {converted_price:.3f} {to_unit_price} per unit.")
     else:
         st.write("Price conversion not defined for the selected units.")
 else:
-    st.write("Please enter a valid price.")
+    st.write("Please enter a valid price.")  # This is fine, just ensure no unmatched parentheses elsewhere
