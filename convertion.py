@@ -4,20 +4,9 @@
 # Step 1: Set Up Your Environment
 # Install necessary libraries
 
-# In[1]:
-
-
-
-
 
 # Step 2: Define the Conversion Logic
-# Since pound to liter depends on density, we need a dictionary of densities for different chemicals.
 
-# In[2]:
-
-
-#!/usr/bin/env python
-# coding: utf-8
 
 import pandas as pd
 import streamlit as st
@@ -84,7 +73,7 @@ if qty > 0:
             converted_qty = None
 
     if converted_qty is not None:
-        st.write(f"{qty} {from_unit} is equal to {converted_qty:.3f} {to_unit}.")
+        st.write(f"{qty} {from_unit} is equal to {converted_qty:.5f} {to_unit}.")
     else:
         st.write("Conversion not defined for the selected units.")
 else:
@@ -115,7 +104,7 @@ if qty > 0:
     converted_qty = convert_units(qty, from_unit, to_unit)
     
     if converted_qty is not None:
-        st.write(f"{qty} {from_unit} is equal to {converted_qty:.3f} {to_unit}.")
+        st.write(f"{qty} {from_unit} is equal to {converted_qty:.5f} {to_unit}.")
     else:
         st.write("Conversion not defined for the selected units.")
 else:
