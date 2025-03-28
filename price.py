@@ -104,7 +104,6 @@ def pound_to_gal(price):
 
 # Conversion function that uses the above-defined functions
 def convert_price(price, from_unit, to_unit):
-    # Define a dictionary to map the units to their respective conversion functions
     conversion_map = {
         ('Liter', 'Pound'): liter_to_pound,
         ('Liter', 'Gal'): liter_to_gal,
@@ -112,35 +111,30 @@ def convert_price(price, from_unit, to_unit):
         ('Liter', 'DST'): liter_to_dst,
         ('Liter', 'LMT'): liter_to_lmt,
         ('Liter', 'Liter'): liter_to_liter,
-
         ('Gal', 'Liter'): gal_to_liter,
         ('Gal', 'Pound'): gal_to_pound,
         ('Gal', 'Kg'): gal_to_kg,
         ('Gal', 'DST'): gal_to_dst,
         ('Gal', 'LMT'): gal_to_lmt,
         ('Gal', 'Gal'): gal_to_gal,
-
         ('DST', 'Liter'): dst_to_liter,
         ('DST', 'Pound'): dst_to_pound,
         ('DST', 'Kg'): dst_to_kg,
         ('DST', 'DST'): dst_to_dst,
         ('DST', 'LMT'): dst_to_lmt,
         ('DST', 'Gal'): dst_to_gal,
-
         ('Kg', 'Liter'): kg_to_liter,
         ('Kg', 'Pound'): kg_to_pound,
         ('Kg', 'Kg'): kg_to_kg,
         ('Kg', 'DST'): kg_to_dst,
         ('Kg', 'LMT'): kg_to_lmt,
         ('Kg', 'Gal'): kg_to_gal,
-
         ('Pound', 'Liter'): pound_to_liter,
         ('Pound', 'Pound'): pound_to_pound,
         ('Pound', 'Kg'): pound_to_kg,
         ('Pound', 'DST'): pound_to_dst,
         ('Pound', 'LMT'): pound_to_lmt,
         ('Pound', 'Gal'): pound_to_gal,
-
         ('LMT', 'Liter'): kg_to_liter,
         ('LMT', 'Pound'): kg_to_pound,
         ('LMT', 'Kg'): kg_to_kg,
@@ -149,15 +143,12 @@ def convert_price(price, from_unit, to_unit):
         ('LMT', 'Gal'): kg_to_gal,
     }
 
-    # Get the conversion function based on the provided units
     conversion_func = conversion_map.get((from_unit, to_unit))
 
-    # Check if the conversion function exists
     if conversion_func:
         try:
-            converted_price = conversion_func(price)
-            return f"${price:.2f} {from_unit} per unit is equal to ${converted_price:.4f} {to_unit} per unit."
+            return conversion_func(price)  # Return only the numeric value
         except Exception as e:
-            return f"Error during conversion: {e}"
+            return None  # Handle conversion errors
     else:
-        return f"Invalid conversion: No conversion available from {from_unit} to {to_unit}."
+        return None  # Handle invalid conversions
