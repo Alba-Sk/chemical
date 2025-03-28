@@ -7,7 +7,7 @@
 # In[1]:
 
 
-pip install streamlit pandas numpy matplotlib seaborn
+
 
 
 # Step 2: Define the Conversion Logic
