@@ -24,13 +24,13 @@ import streamlit as st
 
 # Define densities for different substances (example values)
 conversion_factors = {
-    'Liter_to_Pound': ((1/3.785411784)*12.76),    # DST to Kg (assuming DST is equivalent to Liters for now)
-    'Liter_to_Gal':1/3.785411784,  # Pounds to Kilograms
-    'Liter_to_Kg': ((1/3.78541)*12.76)/2.2046,  # Gallons to Liters
-    'Liter_to_DST': ((1/3.78541)*12.76)/2000,  # Assume 1 Kg is equivalent to 1 Liter for simplicity, adjust based on substance
-    'Liter_to_LMT': (((1/3.78541)*12.76))/2204.62,  # Pounds to Liters based on density of water (adjust for other chemicals)
-    'Liter_to_Liter': 1*1,    # LMT to Kg (for example purposes, adjust as per the substance)
-    'Gal_to_Liter':1*3.785411784
+    'Liter_to_Pound': ((qty/3.785411784)*12.76),    # DST to Kg (assuming DST is equivalent to Liters for now)
+    'Liter_to_Gal':qty/3.785411784,  # Pounds to Kilograms
+    'Liter_to_Kg': ((qty/3.78541)*12.76)/2.2046,  # Gallons to Liters
+    'Liter_to_DST': ((qty/3.78541)*12.76)/2000,  # Assume 1 Kg is equivalent to 1 Liter for simplicity, adjust based on substance
+    'Liter_to_LMT': (((qty/3.78541)*12.76))/2204.62,  # Pounds to Liters based on density of water (adjust for other chemicals)
+    'Liter_to_Liter': qty*1,    # LMT to Kg (for example purposes, adjust as per the substance)
+    'Gal_to_Liter':qty*3.785411784
     
     
 }
