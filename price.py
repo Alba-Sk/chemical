@@ -64,17 +64,17 @@ def kg_to_gal(price):
 
 # Pound conversion
 def pound_to_liter(price):   
-    return (1 * price) / ((1/12.76)*3.785411784)
+    return (1 * price) / ((1 / 12.76) * 3.785411784)
 def pound_to_pound(price):
     return price
 def pound_to_kg(price):
-    return (1 * price) / (1/2.20462)
+    return (1 * price) / (1 / 2.20462)
 def pound_to_dst(price):
-    return ((1 * price) / (1/2000) * 2
+    return ((1 * price) / (1 / 2000) * 2
 def pound_to_lmt(price):
-    return ((1 * price) / (1/2204.62) * 2
+    return ((1 * price) / (1 / 2204.62) * 2
 def pound_to_gal(price):
-    return (1 * price) / (1/12.76)
+    return (1 * price) / (1 / 12.76)
 
 
 # Conversion function that uses the above-defined functions
