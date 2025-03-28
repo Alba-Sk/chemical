@@ -8,90 +8,90 @@
 # Step 2: Define the Conversion Logic
 
 # Define conversion functions for different units
-def liter_to_pound(qty):
-    return (qty / 3.785411784) * 12.76
-def liter_to_gal(qty):    # Liter to Gallons conversion
-    return qty / 3.785411784
-def liter_to_kg(qty):    
-    return ((qty / 3.78541) * 12.76) / 2.2046
-def liter_to_dst(qty):    # Liter to DST conversion
-    return ((qty / 3.78541) * 12.76) / 2000
-def liter_to_lmt(qty):    # Liter to LMT conversion
-    return ((qty / 3.78541) * 12.76) / 2204.62
-def liter_to_liter(qty):    # Liter to Liter conversion (no change, just return the same quantity)
-    return qty
+def liter_to_pound(price):
+    return (price / 3.785411784) * 12.76
+def liter_to_gal(price):    # Liter to Gallons conversion
+    return price / 3.785411784
+def liter_to_kg(price):    
+    return ((price / 3.78541) * 12.76) / 2.2046
+def liter_to_dst(price):    # Liter to DST conversion
+    return ((price / 3.78541) * 12.76) / 2000
+def liter_to_lmt(price):    # Liter to LMT conversion
+    return ((price / 3.78541) * 12.76) / 2204.62
+def liter_to_liter(price):    # Liter to Liter conversion (no change, just return the same quantity)
+    return price
  # Gallons conversion
-def gal_to_liter(qty):   
-    return qty * 3.785411784
-def gal_to_pound(qty):
-    return qty * 12.76
-def gal_to_kg(qty):
-    return (qty * 12.76 ) / 2.20462
-def gal_to_dst(qty):
-    return qty * (12.76/2000)
-def gal_to_lmt(qty):
-    return (qty * 12.76 ) / 2204.62
-def gal_to_gal(qty):
-    return qty
+def gal_to_liter(price):   
+    return price * 3.785411784
+def gal_to_pound(price):
+    return price * 12.76
+def gal_to_kg(price):
+    return (price * 12.76 ) / 2.20462
+def gal_to_dst(price):
+    return price * (12.76/2000)
+def gal_to_lmt(price):
+    return (price * 12.76 ) / 2204.62
+def gal_to_gal(price):
+    return price
  # DST conversion
-def dst_to_liter(qty):   
-    return ((qty * 2000)/12.76)*3.785411784
-def dst_to_pound(qty):
-    return qty * 2000
-def dst_to_kg(qty):
-    return qty * (2000/2.20462)
-def dst_to_dst(qty):
-    return qty
-def dst_to_lmt(qty):
-    return (qty * 2000)/2204.62
-def dst_to_gal(qty):
-    return qty *(2000/12.76)
+def dst_to_liter(price):   
+    return ((price * 2000)/12.76)*3.785411784
+def dst_to_pound(price):
+    return price * 2000
+def dst_to_kg(price):
+    return price * (2000/2.20462)
+def dst_to_dst(price):
+    return price
+def dst_to_lmt(price):
+    return (price * 2000)/2204.62
+def dst_to_gal(price):
+    return price *(2000/12.76)
 
  # DST conversion
-def kg_to_liter(qty):   
-    return qty *(2.20462/12.76)*3.785411784
-def kg_to_pound(qty):
-    return qty *2.20462
-def kg_to_kg(qty):
-    return qty
-def kg_to_dst(qty):
-    return (qty *2.20462)/2000
-def kg_to_lmt(qty):
-    return (qty * 2.20462)/2204.62
-def kg_to_gal(qty):
-    return (qty *2.20462)/12.76
+def kg_to_liter(price):   
+    return price *(2.20462/12.76)*3.785411784
+def kg_to_pound(price):
+    return price *2.20462
+def kg_to_kg(price):
+    return price
+def kg_to_dst(price):
+    return (price *2.20462)/2000
+def kg_to_lmt(price):
+    return (price * 2.20462)/2204.62
+def kg_to_gal(price):
+    return (price *2.20462)/12.76
 
 
  # Pound conversion
-def pound_to_liter(qty):   
-    return ((qty /12.76)*3.785411784)
-def pound_to_pound(qty):
-    return qty
-def pound_to_kg(qty):
-    return qty /2.20462    
-def pound_to_dst(qty):
-    return qty /2000
+def pound_to_liter(price):   
+    return ((price /12.76)*3.785411784)
+def pound_to_pound(price):
+    return price
+def pound_to_kg(price):
+    return price /2.20462    
+def pound_to_dst(price):
+    return price /2000
 def pound_to_lmt(qty):
-    return qty /2204.62
-def pound_to_gal(qty):
-    return qty / 12.76
+    return price /2204.62
+def pound_to_gal(price):
+    return price / 12.76
 
  # Pound conversion
-def lmt_to_liter(qty):   
-    return ((qty *2204.62)/12.76)*3.785411784
-def lmt_to_pound(qty):
-    return qty * 2204.62    
-def lmt_to_kg(qty):
-    return qty *(2204.62/2.20462)
-def lmt_to_dst(qty):
-    return (qty *2204.62)/2000
-def lmt_to_lmt(qty):
-    return qty 
-def lmt_to_gal(qty):
-    return (qty * 2204.62)/12.76
+def lmt_to_liter(price):   
+    return ((price *2204.62)/12.76)*3.785411784
+def lmt_to_pound(price):
+    return price * 2204.62    
+def lmt_to_kg(price):
+    return price *(2204.62/2.20462)
+def lmt_to_dst(price):
+    return (price *2204.62)/2000
+def lmt_to_lmt(price):
+    return price 
+def lmt_to_gal(price):
+    return (price * 2204.62)/12.76
 
 # Conversion function that uses the above-defined functions
-def convert_price(qty, from_unit, to_unit):
+def convert_price(price, from_unit, to_unit):
     # Define a dictionary to map the units to their respective conversion functions
     conversion_map = {
         ('Liter', 'Pound'): liter_to_pound,
@@ -142,6 +142,6 @@ def convert_price(qty, from_unit, to_unit):
 
     # If conversion function exists, apply it
     if conversion_func:
-        return conversion_func(qty)
+        return conversion_func(price)
     else:
         return None  # Invalid conversion
