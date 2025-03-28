@@ -1,4 +1,3 @@
-# app.py
 import streamlit as st
 from convertion import convert_units  # Import unit conversion function
 from price import convert_price      # Import price conversion function
@@ -21,12 +20,13 @@ if qty > 0:
         st.write("Conversion not defined for the selected units.")
 else:
     st.write("Please enter a valid quantity.")
-    
+
+# Add some space between sections
+st.markdown("<br>", unsafe_allow_html=True)
 
 # Price Conversion Section
 st.header("Price Conversion $/UOM")
 
-# Set the step size and format for 4 decimal places
 price_per_unit = st.number_input("Enter price per unit:", min_value=0.0, format="%.4f")
 
 # Input for units
@@ -36,7 +36,7 @@ to_unit_price = st.selectbox("Select the unit to convert to:", ["Pound", "Gal", 
 if price_per_unit > 0:
     converted_price = convert_price(price_per_unit, from_unit_price, to_unit_price)
     if converted_price is not None:
-        st.write(f"{price_per_unit} {from_unit_price} per unit is equal to {converted_price:.4f} {to_unit_price} per unit.")  # 4 decimals
+        st.write(f"{price_per_unit} {from_unit_price} per unit is equal to {converted_price:.4f} {to_unit_price} per unit.")
     else:
         st.write("Price conversion not defined for the selected units.")
 else:
