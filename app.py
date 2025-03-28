@@ -25,11 +25,14 @@ else:
 --------------
 # Price Conversion Section
 st.header("Price Conversion $/UOM")
-price_per_unit = st.number_input("Enter Price per Unit:", min_value=0.0, step=0.1)
-from_unit_price = st.selectbox("Select the price unit to convert from:", ['Liter', 'Gal', 'DST', 'Kg', 'Pound', 'LMT'])
-to_unit_price = st.selectbox("Select the price unit to convert to:", ['Liter', 'Gal', 'DST', 'Kg', 'Pound', 'LMT''])
 
+price_per_unit = st.number_input("Enter price per unit:", min_value=0.0)
 
+# Input for units
+from_unit_price = st.selectbox("Select the unit of the price you're entering:", ["Pound", "Gal", "Kg", "DST", "LMT", "Liter"])
+to_unit_price = st.selectbox("Select the unit to convert to:", ["Pound", "Gal", "Kg", "DST", "LMT", "Liter"])
+
+# Check if price is greater than 0 and perform conversion
 if price_per_unit > 0:
     converted_price = convert_price(price_per_unit, from_unit_price, to_unit_price)
     if converted_price is not None:
@@ -38,6 +41,3 @@ if price_per_unit > 0:
         st.write("Price conversion not defined for the selected units.")
 else:
     st.write("Please enter a valid price.")
-# Clear Cache (in Streamlit App)
-
-#st.set_option('client.caching', False)  # Disable client-side caching
